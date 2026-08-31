@@ -89,13 +89,35 @@
 
 <body>
 
-<button class="floating-signup-btn" onclick="toggleSignupModal(true)" aria-label="Sign Up Form">
-    <svg xmlns="http://w3.org" width="16" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display: block; margin-right: 0.4rem;">
-        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-        <circle cx="12" cy="7" r="4"></circle>
-    </svg>
-    Sign Up
-</button>
+<!-- REVISED SYSTEM HEADER BAR WITH ADMIN UTILITY SHORTCUTS SIDE-BY-SIDE -->
+<div class="top-navbar" style="position: fixed; top: 0; left: 0; right: 0; height: 60px; background: white; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.02);">
+    <div class="nav-logo" style="font-weight: 700; font-size: 1.05rem; color: #ea580c; text-transform: uppercase; letter-spacing: 0.05em;">🌸 Bal Vikas Attendance System</div>
+    
+    <!-- Unified container tracking all operational dashboard links side-by-side on the right -->
+    <div style="display: flex; gap: 0.5rem; align-items: center;">
+        
+        <!-- 1. PENDING CHECK-OUT LINK -->
+        <button class="nav-menu-item" onclick="getPendingCheckOut()" style="color: var(--text-muted); text-decoration: none; font-weight: 700; font-size: 0.85rem; padding: 0.4rem 0.75rem; border-radius: 8px; border: 2px solid var(--border); background: none; cursor: pointer; display: flex; align-items: center; gap: 0.3rem;">
+            <span>🚪</span> Pending Out
+        </button>
+
+        <!-- 2. DATE HISTORY AUDIT LINK -->
+        <a href="absent.html" class="nav-menu-item" style="color: var(--text-muted); text-decoration: none; font-weight: 700; font-size: 0.85rem; padding: 0.4rem 0.75rem; border-radius: 8px; border: 2px solid var(--border); display: flex; align-items: center; gap: 0.3rem;">
+            <span>📅</span> Date Audit
+        </a>
+
+        <!-- 3. EXTRACTED SIGN UP REGISTRATION POPUP LINK -->
+        <button class="nav-menu-item" onclick="toggleSignupModal(true)" style="color: var(--text-muted); text-decoration: none; font-weight: 700; font-size: 0.85rem; padding: 0.4rem 0.75rem; border-radius: 8px; border: 2px solid var(--border); background: none; cursor: pointer; display: flex; align-items: center; gap: 0.3rem;">
+            <svg xmlns="http://w3.org" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            Sign Up
+        </button>
+        
+    </div>
+</div>
+
 
 <div class="kiosk-wrapper">
     <div class="hero-side">
@@ -136,26 +158,6 @@
     <button type="button" class="btn-kiosk btn-checkout" onclick="handleSubmit('Check-out')">
         <span>🔴</span> Check Out
     </button>
-</div>
-
-<!-- DAILY SYSTEM ABSENTEE REPORT -->
-<div style="margin-top: 0.75rem;">
-    <button type="button" class="btn-kiosk" style="background-color: #4f46e5; width: 100%; font-size: 1.05rem; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);" onclick="openAbsenteePage()">
-        <span>📋</span> Absentee Report
-    </button>
-</div>
-				
-<!-- 🌟 GRID 2: COMPACT ADMISTRATIVE DASHBOARD BUTTONS SIDE-BY-SIDE -->
-<div class="btn-grid" style="margin-top: 0.5rem;">
-    <!-- LEFT PANEL UTILITY -->
-    <button type="button" class="btn-kiosk" style="background-color: #ea580c; font-size: 1rem; padding: 0.85rem; box-shadow: 0 6px 16px rgba(234, 88, 12, 0.15);" onclick="getPendingCheckOut()">
-        <span>🚪</span> Pending Check-Out
-    </button>
-
-    <!-- RIGHT PANEL UTILITY (CRISP EASY NAME) -->
-    <a href="absent.html" class="btn-kiosk" style="background-color: #475569; font-size: 1rem; padding: 0.85rem; text-decoration: none; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(71, 85, 105, 0.15);">
-        <span>📅</span> Date History Audit
-    </a>
 </div>
 
 
